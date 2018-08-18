@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        versionCode globalConfiguration["androidVersionCode"]
+
+        buildConfigField "String", "API_KEY", "\"c98876b9978d49178c1e595d005ff151\""
+    }
+}
+
+dependencies {
+    def dataDependencies = rootProject.ext.dataDependencies
+
+    implementation project(':domain')
+    implementation dataDependencies.dagger
+    implementation dataDependencies.daggerSupport
+    kapt(dataDependencies.daggerCompiler)
+
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitConverterGson
+    implementation dataDependencies.gson
+    implementation dataDependencies.okHttp
+    implementation dataDependencies.okHttpLoggingInterceptor
+
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.rxAndroid
+
+    implementation dataDependencies.kotlin
+
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">presentation</string>
+    <string name="internet_connection_error_warning">Internet connection was lost, please enable connection and everything will be reloaded automatically</string>
+</resources>

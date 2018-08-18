@@ -1,0 +1,62 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 27
+
+    //Libraries
+    daggerVersion = '2.13'
+    supportLibraryVersion = '27.1.1'
+    rxJavaVersion = '2.2.0'
+    rxAndroidVersion = '2.1.0'
+    gsonVersion = '2.8.5'
+    okHttpVersion = '3.11.0'
+    constraintLayoutVersion = '1.1.0'
+    retrofitVersion = '2.4.0'
+
+    //Testing
+    robolectricVersion = '3.1.1'
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    mockitoVersion = '1.9.5'
+    dexmakerVersion = '1.0'
+    espressoVersion = '2.0'
+    testingSupportLibVersion = '0.1'
+
+
+    presentationDependencies = [
+            dagger          : "com.google.dagger:dagger:$daggerVersion",
+            daggerSupport   : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerCompiler  : "com.google.dagger:dagger-compiler:$daggerVersion",
+            supportLibrary  : "com.android.support:appcompat-v7:$supportLibraryVersion",
+            recyclerView    : "com.android.support:recyclerview-v7:$supportLibraryVersion",
+            rxJava          : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid       : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            constraintLayout: "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    ]
+
+    domainDependencies = [
+            rxJava: "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+    ]
+
+    dataDependencies = [
+            dagger                  : "com.google.dagger:dagger:$daggerVersion",
+            daggerSupport           : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
+            gson                    : "com.google.code.gson:gson:$gsonVersion",
+            rxJava                  : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid               : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitConverterGson   : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            okHttp                  : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    ]
+}
