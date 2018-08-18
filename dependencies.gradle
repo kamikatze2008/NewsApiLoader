@@ -34,7 +34,7 @@ ext {
 
     domainDependencies = [
             rxJava: "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     ]
 
     dataDependencies = [

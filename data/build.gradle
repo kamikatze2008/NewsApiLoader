@@ -24,21 +24,21 @@ android {
 dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
 
-    implementation project(':domain')
-    implementation dataDependencies.dagger
-    implementation dataDependencies.daggerSupport
+    api project(':domain')
+    api dataDependencies.dagger
+    api dataDependencies.daggerSupport
     kapt(dataDependencies.daggerCompiler)
 
-    implementation dataDependencies.retrofit
-    implementation dataDependencies.retrofitConverterGson
-    implementation dataDependencies.gson
-    implementation dataDependencies.okHttp
-    implementation dataDependencies.okHttpLoggingInterceptor
+    api dataDependencies.retrofit
+    api dataDependencies.retrofitConverterGson
+    api dataDependencies.gson
+    api dataDependencies.okHttp
+    api dataDependencies.okHttpLoggingInterceptor
 
-    implementation dataDependencies.rxJava
-    implementation dataDependencies.rxAndroid
+    api dataDependencies.rxJava
+    api dataDependencies.rxAndroid
 
-    implementation dataDependencies.kotlin
+    api dataDependencies.kotlin
 
 }
 repositories {

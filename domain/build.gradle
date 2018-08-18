@@ -3,6 +3,6 @@ apply plugin: 'kotlin'
 dependencies {
     def domainDependencies = rootProject.ext.domainDependencies
 
-    implementation domainDependencies.rxJava
-    implementation domainDependencies.kotlin
+    apiElements domainDependencies.rxJava
+    apiElements domainDependencies.kotlin
 }

@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import com.test.cmind.presentation.R
 
 class ChannelListFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(R.layout.fragment_channel_list, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_channel_list, container, false)
     }
 }
