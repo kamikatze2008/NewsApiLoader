@@ -1,12 +1,12 @@
-package com.test.cmind.data
+package com.test.cmind.data.datasource
 
 import com.test.cmind.data.entity.NewsSourcesResponse
 import com.test.cmind.data.entity.TopHeadlinesResponse
 import io.reactivex.Single
 import retrofit2.http.Field
 
-interface NewsApi {
+interface NewsDataSource {
     fun getNewsSources(): Single<NewsSourcesResponse>
 
-    fun getTopHeadlines(@Field("sources") sources: String): Single<TopHeadlinesResponse>
+    fun getTopHeadlines(sources: String): Single<TopHeadlinesResponse>
 }

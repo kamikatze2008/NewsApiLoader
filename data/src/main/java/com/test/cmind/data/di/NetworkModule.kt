@@ -3,7 +3,12 @@ package com.test.cmind.data.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.test.cmind.data.NewsApi
+import com.test.cmind.data.datasource.NewsDataSource
+import com.test.cmind.data.datasource.remote.NewsRemoteDataSource
+import com.test.cmind.data.repository.NewsDataRepository
+import com.test.cmind.domain.repository.NewsRepository
 import com.test.cmind.newsapiloader.BuildConfig
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
@@ -22,15 +27,27 @@ class NetworkModule {
     }
 
     @Singleton
+    @Binds
+    fun newsDataSource(newsApi: NewsApi): NewsDataSource {
+        return NewsRemoteDataSource(newsApi)
+    }
+
+    @Singleton
+    @Binds
+    fun newsSourceRepository(newsDataSource: NewsDataSource): NewsRepository {
+        return NewsDataRepository(newsDataSource)
+    }
+
+    @Singleton
     @Provides
-    fun sdasd(retrofit: Retrofit): NewsApi {
+    fun newsApi(retrofit: Retrofit): NewsApi {
         return retrofit.create(NewsApi::class.java)
     }
 
     @Singleton
     @Provides
     fun retrofit(okHttpClient: OkHttpClient,
-                 gsonConverterFactory: GsonConverterFactory, gson: Gson): Retrofit {
+                 gsonConverterFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
                 .client(okHttpClient)
                 .baseUrl(NEWS_API_BASE_URL)
