@@ -20,16 +20,6 @@ ext {
     constraintLayoutVersion = '1.1.0'
     retrofitVersion = '2.4.0'
 
-    //Testing
-    robolectricVersion = '3.1.1'
-    jUnitVersion = '4.12'
-    assertJVersion = '1.7.1'
-    mockitoVersion = '1.9.5'
-    dexmakerVersion = '1.0'
-    espressoVersion = '2.0'
-    testingSupportLibVersion = '0.1'
-
-
     presentationDependencies = [
             dagger          : "com.google.dagger:dagger:$daggerVersion",
             daggerSupport   : "com.google.dagger:dagger-android-support:$daggerVersion",
@@ -38,12 +28,13 @@ ext {
             recyclerView    : "com.android.support:recyclerview-v7:$supportLibraryVersion",
             rxJava          : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
             rxAndroid       : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
             constraintLayout: "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
     ]
 
     domainDependencies = [
-            rxJava: "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+            rxJava: "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     ]
 
     dataDependencies = [
@@ -53,7 +44,7 @@ ext {
             gson                    : "com.google.code.gson:gson:$gsonVersion",
             rxJava                  : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
             rxAndroid               : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
             retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             retrofitConverterGson   : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
             okHttp                  : "com.squareup.okhttp3:okhttp:$okHttpVersion",
